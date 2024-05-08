@@ -1,0 +1,10 @@
+
+.App {
+  text-align: center;
+}
+
+body{
+  background: #ddd;
+  background-size: cover;
+  background-attachment: fixed;
+}

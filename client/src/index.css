@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: 'Exo 2 Variable', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
