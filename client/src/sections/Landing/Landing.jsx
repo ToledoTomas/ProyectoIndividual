@@ -3,11 +3,11 @@ import style from './Landing.module.css';
 
 const Landing = () => {
   return (
-    <section>
-        <div>
+    <div className={style.main}>
+        <div className={style.container}>
             <button className={style.button}>START GAME</button>
         </div>
-    </section>
+    </div>
   )
 }
 

@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    gap: 5vw;
+    padding: 7px;
+    background-color: hsl(89, 13%, 66%, 0.6);
+ }
+
+ .link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7rem;
+ }
+ 
+
+ .logo{
+    height: 30px;
+ }
+
+ .span{
+    margin-left: 4px;
+ }

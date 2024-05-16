@@ -1,3 +1,13 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./arcade.jpg');
+    background-size: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .button {
-    padding: 3px;
+    display: flex;
 }

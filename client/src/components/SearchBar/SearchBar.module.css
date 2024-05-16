@@ -1,0 +1,14 @@
+.containerSearch{
+    margin-top: 15px;
+    margin-right: 5rem;
+}
+
+.search{
+    margin-right: 5px;
+    border-radius: 7px;
+    padding: 3px;
+}
+
+.search::placeholder{
+    text-align: right;
+}
