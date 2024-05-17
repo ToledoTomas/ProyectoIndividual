@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import style from "./NavBar.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 
-const NavBar = ({handleChange, handleSubmit}) => {
+const NavBar = () => {
   return (
     <nav className={style.container}>
       <div>
@@ -17,7 +17,7 @@ const NavBar = ({handleChange, handleSubmit}) => {
           Create Game
         </Link>
       </div>
-      <SearchBar handleChange={handleChange}/>
+      <SearchBar />
     </nav>
   );
 };

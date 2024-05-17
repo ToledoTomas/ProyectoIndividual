@@ -1,14 +1,12 @@
-import React from 'react'
+import React from 'react';
+import pizza from './pexels-renestrgar-19602378.jpg';
+import style from './Card.module.css';
 
-const Card = ({vg}) => {
-
-  console.log(vg)
+const Card = () => {
 
   return (
-    <div>
-        <h1>Nombre:</h1>
-        <h2>Plataforma:</h2>
-        <p>Descripcion:</p>
+    <div className={style.container}>
+        <img className={style.image} src={pizza} alt="imagen de pizza" />
     </div>
   )
 }
