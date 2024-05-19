@@ -10,11 +10,11 @@ const NavBar = () => {
         <Link className={style.link} to="/home">
           Home
         </Link>
-        <Link className={style.link} to="/games">
-          Games
-        </Link>
         <Link className={style.link} to="/create-games">
           Create Game
+        </Link>
+        <Link className={style.link} to="/about-us">
+          About us
         </Link>
       </div>
       <SearchBar />
