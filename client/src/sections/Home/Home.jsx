@@ -15,6 +15,7 @@ import {
   orderByRating,
 } from '../../redux/actions';
 import Card from '../../components/Card/Card';
+import Paginado from '../../components/Paginado/Paginado';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [videogamesPerPage, setVideogamesPerPage] = useState(15);
+  const [order, setOrder] = useState('');
 
   const indexOfLastVideogame = currentPage * videogamesPerPage;
   const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
@@ -31,17 +33,18 @@ const Home = () => {
     indexOfLastVideogame,
   );
 
-  const [order, setOrder] = useState('');
+  const paginado = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
 
   useEffect(() => {
     dispatch(getGenres());
     dispatch(getPlatforms());
   }, [dispatch]);
 
-  function handleClick(e) {
-    e.preventDefault();
+  useEffect(() => {
     dispatch(getVideogames());
-  }
+  }, [dispatch]);
 
   function handleSort(e) {
     e.preventDefault();
@@ -80,8 +83,8 @@ const Home = () => {
           handleRating={handleRating}
         />
       </section>
-      <main>
-        <ul>
+      <main className={style.main}>
+        <ul className={style.unlist}>
           {currentVideogames?.map(g => {
             return (
               <Card
@@ -97,6 +100,13 @@ const Home = () => {
           })}
         </ul>
       </main>
+      <div className="pagination">
+        <Paginado
+          videogamesPerPage={videogamesPerPage}
+          allVideogames={allVideogames.length}
+          paginado={paginado}
+        />
+      </div>
       <Footer />
     </div>
   );

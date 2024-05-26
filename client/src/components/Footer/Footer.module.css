@@ -1,11 +1,12 @@
 .container {
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
     gap: 5vw;
     padding: 7px;
-    background-color: hsl(89, 13%, 66%, 0.6);
+    background-color: hsl(89, 13%, 66%);
+    z-index: 101;
  }
 
  .link {
@@ -15,6 +16,14 @@
     align-items: center;
     justify-content: center;
     margin-left: 7rem;
+    transition: all;
+    transition-duration: 0.2s;
+    &:hover{
+      transform: scale(1.1);
+    }
+    &:active{
+      color: #0b60a1;
+    }
  }
  
 

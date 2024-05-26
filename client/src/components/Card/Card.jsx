@@ -3,23 +3,31 @@ import style from './Card.module.css';
 import { Link } from 'react-router-dom';
 
 const Card = ({ name, image, genres, id, rating }) => {
-  let genre = genre.map(e => e.name);
+  let genre = genres.map(e => e.name);
 
   return (
     <div className={style.container}>
-      <li>
+      <li className={style.list}>
         <Link to={'/videogame/' + id}>
-          <img src={image} alt={`${name} Image`} />
+          <img className={style.image} src={image} alt={`${name} Image`} />
         </Link>
-        <div>
-          <h3>{name}</h3>
-        </div>
-        <div>Genre:</div>
-        <div>
-          <h5>{genre.join('-')}</h5>
-        </div>
-        <div>Rating:</div>
-        <div>{rating}</div>
+        <main className={style.info}>
+          <div>
+            <h3 className={style.title}>{name}</h3>
+          </div>
+          <section className={style.genre}>
+            <div className={style.divInfo}>Genre: </div>
+            <div>
+              <h5 className={style.titleInfo}>{genre.join('-')}</h5>
+            </div>
+          </section>
+          <section className={style.rating}>
+            <div className={style.divInfo}>Rating: </div>
+            <div>
+              <h5 className={style.titleInfo}>{rating}</h5>
+            </div>
+          </section>
+        </main>
       </li>
     </div>
   );

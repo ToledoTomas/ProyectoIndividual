@@ -1,0 +1,9 @@
+.container{
+    margin: 5vh;
+}
+
+.select{
+    margin: 5px;
+    border-radius: 5px;
+    padding: 4px;
+}

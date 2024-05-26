@@ -1,0 +1,21 @@
+.container{
+    margin-bottom: 30px;
+}
+.number{
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: hsl(89, 23%, 77%);
+    transition: all;
+        background-color: hsl(206, 87%, 34%, 0.9);
+        padding: 4px 8px;
+        border-radius: 10px;
+        transition: all;
+        transition-duration: 0.3s;
+        &:active{
+          color: hsl(90, 6%, 46%);
+     }
+     &:focus{
+        font-size: 1.2em;
+     }
+}

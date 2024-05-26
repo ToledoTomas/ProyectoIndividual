@@ -1,6 +1,23 @@
 .main{
     width: 100vw;
     height: 100vh;
-    background: url('./Controllers.jpg');
-    background-size: 100%;
+    background: url('./BackgroundImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+   margin: 0;
+}
+
+.unlist{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.main{
+    height: 100%;
 }

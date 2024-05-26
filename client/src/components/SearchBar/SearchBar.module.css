@@ -6,9 +6,32 @@
 .search{
     margin-right: 5px;
     border-radius: 7px;
+    width: 14rem;
     padding: 3px;
 }
 
 .search::placeholder{
-    text-align: right;
+    text-align: center;
+}
+
+.button{
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: all;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f0d58c;
+background-image: linear-gradient(146deg, #093d304f 0%, #107acb 100%);
+text-decoration: none;
+font-weight: bold;
+color: rgb(186, 207, 245);
+&:hover{
+    transition-duration: 0.4s;
+    background-image: linear-gradient(146deg, #093d304f 10%, #107acb 90%);
+    box-shadow: 0 1px 6px 0px rgba(255, 255, 255, 0.3);
+};
+&:active{
+    transition-duration: 0.3s;
+    transform: scale(0.95);
+}
 }

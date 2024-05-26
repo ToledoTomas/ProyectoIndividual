@@ -9,5 +9,14 @@
     margin-left: 5rem;
     margin-top: 10px;
     text-decoration: none;
-    color: antiquewhite;
-}
+    color: hsl(89, 23%, 77%);
+    background-color: hsl(206, 87%, 34%, 0.9);
+    padding: 8px;
+    border-radius: 10px;
+    color: ahsl(89, 13%, 66%);
+    transition: all;
+    transition-duration: 0.3s;
+    &:active{
+      color: hsl(90, 6%, 46%);
+    }
+ }

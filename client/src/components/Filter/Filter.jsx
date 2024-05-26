@@ -11,24 +11,24 @@ const Filter = ({
   const allGenre = useSelector(state => state.genres);
 
   return (
-    <div>
-      <select onChange={e => handleSort(e)}>
+    <div className={style.container}>
+      <select className={style.select} onChange={e => handleSort(e)}>
         <option>Order</option>
         <option value="Asc">A-Z</option>
         <option value="Desc">Z-A</option>
       </select>
-      <select onChange={e => handleRating(e)}>
+      <select className={style.select} onChange={e => handleRating(e)}>
         <option>Rating</option>
         <option value="Top">Top rating</option>
         <option value="Low">Low rating</option>
       </select>
-      <select onChange={e => handleFilterCreated(e)}>
+      <select className={style.select} onChange={e => handleFilterCreated(e)}>
         <option>Games</option>
         <option value="All">All</option>
         <option value="Created">Created</option>
         <option value="Api">Existent</option>
       </select>
-      <select onChange={e => handleFilterGenre(e)}>
+      <select className={style.select} onChange={e => handleFilterGenre(e)}>
         <option>Genres</option>
         <option value="All">All</option>
         {allGenre.map(genre => (

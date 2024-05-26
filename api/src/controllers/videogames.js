@@ -9,19 +9,19 @@ const getGames = async () => {
   let apiGames = [];
 
   const url1 = await axios.get(
-    `https://api.rawg.io/api/games?key=${API_KEY}&page=1`,
+    `https://api.rawg.io/api/games?key=48d155d487144085ae0eeba6215dede5&page=1`,
   );
   const url2 = await axios.get(
-    `https://api.rawg.io/api/games?key=${API_KEY}&page=2`,
+    `https://api.rawg.io/api/games?key=48d155d487144085ae0eeba6215dede5&page=2`,
   );
   const url3 = await axios.get(
-    `https://api.rawg.io/api/games?key=${API_KEY}&page=3`,
+    `https://api.rawg.io/api/games?key=48d155d487144085ae0eeba6215dede5&page=3`,
   );
   const url4 = await axios.get(
-    `https://api.rawg.io/api/games?key=${API_KEY}&page=4`,
+    `https://api.rawg.io/api/games?key=48d155d487144085ae0eeba6215dede5&page=4`,
   );
   const url5 = await axios.get(
-    `https://api.rawg.io/api/games?key=${API_KEY}&page=5`,
+    `https://api.rawg.io/api/games?key=48d155d487144085ae0eeba6215dede5&page=5`,
   );
 
   apiGames = url1.data.results.concat(
@@ -85,7 +85,7 @@ router.get('/:id', async (req, res) => {
       return res.json(gameDb);
     }
     const gameApi = await axios.get(
-      `https://api.rawg.io/api/games/${id}?key=${API_KEY}`,
+      `https://api.rawg.io/api/games/${id}?key=48d155d487144085ae0eeba6215dede5`,
     );
     res.json(gameApi.data);
   } catch (error) {
