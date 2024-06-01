@@ -14,6 +14,12 @@ function rootReducer(state = initialState, action) {
         videogames: action.payload,
       };
 
+    case 'GET_VIDEOGAME_NAME':
+      return {
+        ...state,
+        videogames: action.payload,
+      };
+
     case 'GET_GENRES':
       return {
         ...state,

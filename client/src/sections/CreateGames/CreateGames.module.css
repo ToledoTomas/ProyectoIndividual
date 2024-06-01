@@ -37,17 +37,66 @@ color: rgb(186, 207, 245);
 
 .form{
     display: flex;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(7px);
     flex-direction: column;
     border: solid 1px black;
     align-items: center;
-    width: 50vw;
-    height: 50vh;
+    width: 40vw;
+    height: 55vh;
     position: absolute;
-    left: 25em;
+    left: 30em;
     top: 10em;
 }
 
 .important{
     font-weight: bold;
+    display: flex;
+}
+
+.secondary{
+    font-weight: bold;
+    display: flex;
+}
+
+.separated{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.separatedv2{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: 20vw;
+    justify-content: space-evenly;
+}
+
+.inputImportant{
+    border-radius: 5px;
+    margin-top: 8px;
+    width: 20vw;
+}
+
+.buttonCreate{
+    width: 20vw;
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: all;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f0d58c;
+background-image: linear-gradient(146deg, #093d304f 0%, #107acb 100%);
+text-decoration: none;
+font-weight: bold;
+color: rgb(186, 207, 245);
+&:hover{
+    transition-duration: 0.4s;
+    background-image: linear-gradient(146deg, #093d304f 10%, #107acb 90%);
+    box-shadow: 0 1px 6px 0px rgba(255, 255, 255, 0.3);
+};
+&:active{
+    transition-duration: 0.3s;
+    transform: scale(0.95);
+}
 }

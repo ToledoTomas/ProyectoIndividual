@@ -24,7 +24,7 @@ const SearchBar = () => {
   }
 
   return (
-    <form onSubmit={e => handleSubmit(e)} className={style.containerSearch}>
+    <form className={style.containerSearch}>
       <input
         className={style.search}
         placeholder="Enter the name of a videogame"
@@ -32,7 +32,11 @@ const SearchBar = () => {
         value={name}
         onChange={e => handleInputChange(e)}
       />
-      <button type="submit" className={style.button}>
+      <button
+        onClick={e => handleSubmit(e)}
+        type="submit"
+        className={style.button}
+      >
         Search
       </button>
     </form>

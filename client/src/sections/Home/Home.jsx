@@ -16,6 +16,7 @@ import {
 } from '../../redux/actions';
 import Card from '../../components/Card/Card';
 import Paginado from '../../components/Paginado/Paginado';
+import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -70,6 +71,10 @@ const Home = () => {
     setOrder(e.target.value);
   }
 
+  if (!allVideogames.length) {
+    return <Loading />;
+  }
+
   return (
     <div className={style.main}>
       <nav>
@@ -100,7 +105,7 @@ const Home = () => {
           })}
         </ul>
       </main>
-      <div className="pagination">
+      <div>
         <Paginado
           videogamesPerPage={videogamesPerPage}
           allVideogames={allVideogames.length}

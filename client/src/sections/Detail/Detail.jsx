@@ -17,6 +17,12 @@ const Detail = () => {
 
   const detail = useSelector(state => state.detail);
 
+  const removeHtmlTags = html => {
+    const temporalDivElement = document.createElement('div');
+    temporalDivElement.innerHTML = html;
+    return temporalDivElement.textContent || temporalDivElement.innerText || '';
+  };
+
   return (
     <div className={style.main}>
       <Link to="/home">
@@ -24,8 +30,8 @@ const Detail = () => {
       </Link>
       <main>
         <div>
-          <div className="button_container_detail">
-            <div className="title_container_detail">
+          <div>
+            <div>
               <h1 className={style.title}>{detail.name}</h1>
               <img
                 className={style.image}
@@ -34,7 +40,7 @@ const Detail = () => {
                     ? detail.background_image
                     : detail.image
                 }
-                alt="not found"
+                alt={`${detail.name} Image`}
               />
               <p className={style.info}>
                 <span className={style.span}>Released: </span> {detail.released}
@@ -56,7 +62,8 @@ const Detail = () => {
               </p>
               <p className={style.description}>
                 <span className={style.span}>Description: </span>
-                {detail.description || detail.description_raw}
+                {removeHtmlTags(detail.description) ||
+                  removeHtmlTags(detail.description_raw)}
               </p>
             </div>
           </div>
