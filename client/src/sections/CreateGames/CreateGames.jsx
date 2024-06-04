@@ -72,7 +72,7 @@ export default function CreateGames() {
 
     if (Object.keys(errors).length === 0) {
       dispatch(postVideogame(input));
-      alert('Videogame created 👌');
+      alert('Videogame created');
       setInput({
         name: '',
         image: '',
@@ -83,24 +83,24 @@ export default function CreateGames() {
         platforms: [],
       });
     } else {
-      alert('ERROR: videogame not created 😕');
+      alert('ERROR: videogame not created');
       return;
     }
   }
 
-  function handleDeletePlatform(e) {
-    setInput({
-      ...input,
-      platforms: input.platforms.filter(p => p !== e),
-    });
-  }
+  // function handleDeletePlatform(e) {
+  //   setInput({
+  //     ...input,
+  //     platforms: input.platforms.filter(p => p !== e),
+  //   });
+  // }
 
-  function handleDeleteGenre(e) {
-    setInput({
-      ...input,
-      genres: input.genres.filter(g => g !== e),
-    });
-  }
+  // function handleDeleteGenre(e) {
+  //   setInput({
+  //     ...input,
+  //     genres: input.genres.filter(g => g !== e),
+  //   });
+  // }
 
   useEffect(() => {
     dispatch(getGenres());

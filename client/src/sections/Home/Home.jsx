@@ -38,6 +38,7 @@ const Home = () => {
     setCurrentPage(pageNumber);
   };
 
+
   useEffect(() => {
     dispatch(getGenres());
     dispatch(getPlatforms());
@@ -47,27 +48,36 @@ const Home = () => {
     dispatch(getVideogames());
   }, [dispatch]);
 
+  function handleRefresh(e){
+    e.preventDefault();
+    dispatch(getVideogames());
+  }
+
   function handleSort(e) {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
+    setCurrentPage(1);
     setOrder(e.target.value);
   }
 
   function handleFilterGenre(e) {
     e.preventDefault();
     dispatch(filterVideogamesByGenre(e.target.value));
+    setCurrentPage(1);
     setOrder(e.target.value);
   }
 
   function handleFilterCreated(e) {
     e.preventDefault();
     dispatch(filterCreated(e.target.value));
+    setCurrentPage(1);
     setOrder(e.target.value);
   }
 
   function handleRating(e) {
     e.preventDefault();
     dispatch(orderByRating(e.target.value));
+    setCurrentPage(1);
     setOrder(e.target.value);
   }
 
@@ -78,7 +88,7 @@ const Home = () => {
   return (
     <div className={style.main}>
       <nav>
-        <NavBar />
+        <NavBar handleRefresh={handleRefresh}/>
       </nav>
       <section>
         <Filter

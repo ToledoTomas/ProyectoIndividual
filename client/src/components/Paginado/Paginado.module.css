@@ -15,7 +15,7 @@
         &:active{
           color: hsl(90, 6%, 46%);
      }
-     &:focus{
-        font-size: 1.2em;
+     &:hover{
+        font-size: 1.5em;
      }
 }

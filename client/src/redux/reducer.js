@@ -12,6 +12,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         videogames: action.payload,
+        allVideogames: action.payload,
       };
 
     case 'GET_VIDEOGAME_NAME':
@@ -112,10 +113,11 @@ function rootReducer(state = initialState, action) {
         action.payload === 'Created'
           ? state.allVideogames.filter(el => el.createdInDb)
           : state.allVideogames.filter(el => !el.createdInDb);
+      const filteredFinally =
+        action.payload === 'All' ? state.allVideogames : filterCreated;
       return {
         ...state,
-        videogames:
-          action.payload === 'All' ? state.allVideogames : filterCreated,
+        videogames: filteredFinally,
       };
 
     default:
