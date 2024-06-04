@@ -115,7 +115,6 @@ function rootReducer(state = initialState, action) {
           : state.allVideogames.filter(el => !el.createdInDb);
       const filteredFinally =
         action.payload === 'All' ? state.allVideogames : filterCreated;
-      console.log(filterCreated);
       return {
         ...state,
         videogames: filteredFinally,

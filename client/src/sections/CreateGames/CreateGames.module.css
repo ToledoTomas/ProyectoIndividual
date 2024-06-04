@@ -42,7 +42,7 @@ color: rgb(186, 207, 245);
     border: solid 1px black;
     align-items: center;
     width: 40vw;
-    height: 55vh;
+    height: 60vh;
     position: absolute;
     left: 30em;
     top: 10em;
@@ -99,4 +99,11 @@ color: rgb(186, 207, 245);
     transition-duration: 0.3s;
     transform: scale(0.95);
 }
+}
+
+.error{
+    color: rgb(201, 5, 5);
+    font-weight: bold;
+    margin: 0;
+    margin-top: 10px;
 }

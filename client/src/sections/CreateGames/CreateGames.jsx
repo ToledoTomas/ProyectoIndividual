@@ -126,7 +126,7 @@ export default function CreateGames() {
               name="name"
               onChange={e => handleChange(e)}
             />
-            {errors.name && <p>{errors.name}</p>}
+            {errors.name && <p className={style.error}>*{errors.name}*</p>}
           </div>
           <div className={style.separated}>
             <label className={style.important}>Image: </label>
@@ -149,7 +149,7 @@ export default function CreateGames() {
               onChange={e => handleChange(e)}
             />
             {errors.description && (
-              <p>{errors.description}</p>
+              <p className={style.error}>*{errors.description}*</p>
             )}
           </div>
           <div className={style.separatedv2}>
