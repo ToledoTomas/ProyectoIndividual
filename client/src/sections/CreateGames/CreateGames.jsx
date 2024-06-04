@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../../components/Footer/Footer';
 import style from './CreateGames.module.css';
 import { Link } from 'react-router-dom';
+
 function validate(input) {
   let errors = {};
   if (!input.name.trim()) {
@@ -125,7 +126,7 @@ export default function CreateGames() {
               name="name"
               onChange={e => handleChange(e)}
             />
-            {errors.name && <p className="error">{errors.name}</p>}
+            {errors.name && <p>{errors.name}</p>}
           </div>
           <div className={style.separated}>
             <label className={style.important}>Image: </label>
@@ -148,7 +149,7 @@ export default function CreateGames() {
               onChange={e => handleChange(e)}
             />
             {errors.description && (
-              <p className="error">{errors.description}</p>
+              <p>{errors.description}</p>
             )}
           </div>
           <div className={style.separatedv2}>
@@ -175,9 +176,7 @@ export default function CreateGames() {
           <div className={style.separatedv2}>
             <div>
               <label className={style.secondary}>Genres </label>
-              <select
-                onChange={e => handleSelectGenre(e)}
-              >
+              <select onChange={e => handleSelectGenre(e)}>
                 {genre.map(g => (
                   <option key={g.name} value={g.name}>
                     {g.name}
@@ -187,9 +186,7 @@ export default function CreateGames() {
             </div>
             <div>
               <label className={style.secondary}>Platforms </label>
-              <select
-                onChange={e => handleSelectPlatform(e)}
-              >
+              <select onChange={e => handleSelectPlatform(e)}>
                 {platform.map(p => (
                   <option key={p.name} value={p.name}>
                     {p.name}

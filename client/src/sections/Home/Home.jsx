@@ -17,6 +17,7 @@ import {
 import Card from '../../components/Card/Card';
 import Paginado from '../../components/Paginado/Paginado';
 import Loading from '../../components/Loading/Loading';
+import notImage from './parental-advisory.jpg';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,6 @@ const Home = () => {
     setCurrentPage(pageNumber);
   };
 
-
   useEffect(() => {
     dispatch(getGenres());
     dispatch(getPlatforms());
@@ -48,7 +48,11 @@ const Home = () => {
     dispatch(getVideogames());
   }, [dispatch]);
 
-  function handleRefresh(e){
+  if (!allVideogames.length) {
+    return <Loading />;
+  }
+
+  function handleRefresh(e) {
     e.preventDefault();
     dispatch(getVideogames());
   }
@@ -81,14 +85,10 @@ const Home = () => {
     setOrder(e.target.value);
   }
 
-  if (!allVideogames.length) {
-    return <Loading />;
-  }
-
   return (
     <div className={style.main}>
       <nav>
-        <NavBar handleRefresh={handleRefresh}/>
+        <NavBar handleRefresh={handleRefresh} />
       </nav>
       <section>
         <Filter
@@ -105,7 +105,7 @@ const Home = () => {
               <Card
                 id={g.id}
                 name={g.name}
-                image={g.image}
+                image={g.image.includes('http') ? g.image : notImage}
                 genres={g.genres}
                 key={g.id}
                 rating={g.rating}

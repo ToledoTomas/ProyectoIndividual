@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDetails } from '../../redux/actions';
 import { Link } from 'react-router-dom';
+import notImage from './parental-advisory.jpg';
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -35,11 +36,7 @@ const Detail = () => {
               <h1 className={style.title}>{detail.name}</h1>
               <img
                 className={style.image}
-                src={
-                  detail.background_image
-                    ? detail.background_image
-                    : detail.image
-                }
+                src={detail.image.includes('http') ? detail.image : notImage}
                 alt={`${detail.name} Image`}
               />
               <p className={style.info}>
